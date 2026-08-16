@@ -1,0 +1,39 @@
+{
+  "password_gate_check": {
+    "url": "https://dabit01-devstore.myshopify.com/",
+    "status": 302,
+    "x-request-id": "696a2e04-7c1f-40c6-af07-49e4fd1549da-1786868676"
+  },
+  "search_catalog": {
+    "status": 200,
+    "x-request-id": "deb35640-de5c-4c00-9c86-dcebc51063d1-1786868677",
+    "all_headers_with_request_or_trace": {
+      "x-request-id": "deb35640-de5c-4c00-9c86-dcebc51063d1-1786868677",
+      "CF-RAY": "a2bf0b2facceec9f-MAD"
+    }
+  },
+  "create_cart": {
+    "status": 200,
+    "x-request-id": "2d04b174-8aea-4e78-86cf-6d0bd8a27abd-1786868677",
+    "all_headers_with_request_or_trace": {
+      "x-request-id": "2d04b174-8aea-4e78-86cf-6d0bd8a27abd-1786868677",
+      "CF-RAY": "a2bf0b32d8040775-MAD"
+    }
+  },
+  "checkout_bypass_page": {
+    "final_url": "https://dabit01-devstore.myshopify.com/checkouts/cn/hWNFiMvvlJF3E3yyLirI5hZ5/en-es?_r=AQABFvQBzr8Fvr-uBYapOOOlOKfok2F94Qc8aLOqBeh459Y",
+    "status": 200,
+    "x-request-id": null,
+    "all_headers_with_request_or_trace": {
+      "CF-RAY": "a2bf0b3a6b9b035f-MAD"
+    }
+  },
+  "checkout_bypass_redirect_hop": {
+    "status": 302,
+    "x-request-id": "44be819c-0bba-4b2e-a659-0becbddab889-1786868678",
+    "all_headers_with_request_or_trace": {
+      "x-request-id": "44be819c-0bba-4b2e-a659-0becbddab889-1786868678",
+      "CF-RAY": "a2bf0b387f26035f-MAD"
+    }
+  }
+}     

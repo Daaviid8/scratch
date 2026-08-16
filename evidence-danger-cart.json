@@ -1,0 +1,198 @@
+{
+  "ucp": {
+    "version": "2026-04-08",
+    "status": "success",
+    "services": {
+      "dev.ucp.shopping": []
+    },
+    "capabilities": {
+      "dev.ucp.shopping.catalog.search": [
+        {
+          "version": "2026-04-08",
+          "spec": "https://ucp.dev/2026-04-08/specification/catalog",
+          "schema": "https://ucp.dev/2026-04-08/schemas/shopping/catalog_search.json"
+        }
+      ],
+      "dev.ucp.shopping.catalog.lookup": [
+        {
+          "version": "2026-04-08",
+          "spec": "https://ucp.dev/2026-04-08/specification/catalog",
+          "schema": "https://ucp.dev/2026-04-08/schemas/shopping/catalog_lookup.json"
+        }
+      ],
+      "dev.ucp.shopping.cart": [
+        {
+          "version": "2026-04-08",
+          "spec": "https://ucp.dev/2026-04-08/specification/cart",
+          "schema": "https://ucp.dev/2026-04-08/schemas/shopping/cart.json"
+        }
+      ],
+      "dev.ucp.shopping.checkout": [
+        {
+          "version": "2026-04-08",
+          "spec": "https://ucp.dev/2026-04-08/specification/checkout",
+          "schema": "https://ucp.dev/2026-04-08/schemas/shopping/checkout.json"
+        }
+      ],
+      "dev.ucp.shopping.order": [
+        {
+          "version": "2026-04-08",
+          "spec": "https://ucp.dev/2026-04-08/specs/shopping/order",
+          "schema": "https://ucp.dev/2026-04-08/schemas/shopping/order.json"
+        }
+      ],
+      "dev.ucp.shopping.fulfillment": [
+        {
+          "version": "2026-04-08",
+          "spec": "https://ucp.dev/2026-04-08/specification/fulfillment",
+          "schema": "https://ucp.dev/2026-04-08/schemas/shopping/fulfillment.json",
+          "extends": [
+            "dev.ucp.shopping.checkout",
+            "dev.ucp.shopping.cart"
+          ],
+          "requires": {
+            "protocol": {
+              "min": "2026-04-08"
+            }
+          },
+          "config": {
+            "allows_multi_destination": {
+              "shipping": false
+            },
+            "allows_method_combinations": [
+              [
+                "shipping"
+              ]
+            ]
+          }
+        }
+      ],
+      "dev.ucp.shopping.discount": [
+        {
+          "version": "2026-04-08",
+          "spec": "https://ucp.dev/2026-04-08/specification/discount",
+          "schema": "https://ucp.dev/2026-04-08/schemas/shopping/discount.json",
+          "extends": [
+            "dev.ucp.shopping.checkout",
+            "dev.ucp.shopping.cart"
+          ],
+          "requires": {
+            "protocol": {
+              "min": "2026-04-08"
+            }
+          }
+        }
+      ]
+    },
+    "payment_handlers": {
+      "com.google.pay": [
+        {
+          "id": "gpay",
+          "version": "2026-01-11",
+          "spec": "https://pay.google.com/gp/p/ucp/2026-01-11/",
+          "schema": "https://pay.google.com/gp/p/ucp/2026-01-11/schemas/config.json",
+          "config": {
+            "api_version": 2,
+            "api_version_minor": 0,
+            "merchant_info": {
+              "merchant_name": "dabit01-devstore",
+              "merchant_id": "16708973830884969730",
+              "merchant_origin": "dabit01-devstore.myshopify.com",
+              "auth_jwt": ""
+            },
+            "allowed_payment_methods": [
+              {
+                "type": "CARD",
+                "parameters": {
+                  "allowed_auth_methods": [
+                    "PAN_ONLY",
+                    "CRYPTOGRAM_3DS"
+                  ],
+                  "allowed_card_networks": [
+                    "VISA",
+                    "MASTERCARD",
+                    "AMEX",
+                    "DISCOVER"
+                  ],
+                  "billing_address_required": true,
+                  "billing_address_parameters": {
+                    "format": "FULL",
+                    "phone_number_required": false
+                  }
+                },
+                "tokenization_specification": {
+                  "type": "PAYMENT_GATEWAY",
+                  "parameters": {
+                    "gateway": "shopify",
+                    "gatewayMerchantId": "67443392720"
+                  }
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "dev.shopify.card": [
+        {
+          "id": "shopify.card",
+          "version": "2026-01-15",
+          "spec": "https://ucp.dev/specification/payment-handler-guide",
+          "schema": "https://shopify.dev/ucp/card-payment-handler/2026-01-15/config.json",
+          "config": {
+            "payment_methods": [
+              {
+                "type": "card",
+                "enabled_card_brands": [
+                  "visa",
+                  "master",
+                  "american_express",
+                  "discover",
+                  "diners_club"
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  "id": "gid://shopify/Cart/hWNFiK1QAr547JqpmEBexyol?key=2e6ccc5fb651ac31a5341684c158b6e1",
+  "line_items": [],
+  "currency": "USD",
+  "discounts": {
+    "codes": [],
+    "applied": []
+  },
+  "totals": [
+    {
+      "type": "subtotal",
+      "amount": 0,
+      "display_text": "Subtotal"
+    },
+    {
+      "type": "total",
+      "amount": 0,
+      "display_text": "Total"
+    }
+  ],
+  "fulfillment": {
+    "methods": []
+  },
+  "expires_at": "2026-09-15T07:55:54Z",
+  "links": [
+    {
+      "type": "privacy_policy",
+      "title": "Privacy Policy",
+      "url": "https://checkout.shopify.com/67443392720/policies/31186485456.html?locale=en"
+    }
+  ],
+  "messages": [
+    {
+      "type": "warning",
+      "content_type": "plain",
+      "code": "merchandise_out_of_stock",
+      "content": "The product 'The Collection Snowboard: Hydrogen' is already sold out."
+    }
+  ],
+  "continue_url": "https://dabit01-devstore.myshopify.com/cart/c/hWNFiK1QAr547JqpmEBexyol?key=Uwr1Q4PpnCNcOL1WOlhCUettj56u94Pz9HVrw--RQKZfqhfWbxv_lIgkmIcHrbVIIQQhJshDAjToIXmcMRUA_Wiyv-29vgg9_nOlDN9kAxuG9yU55oMohJKTJvFFYBz5wE-y52z98UgTC6SZGbpKKQ%3D%3D"
+}   
